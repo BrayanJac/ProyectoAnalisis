@@ -14,7 +14,7 @@ El diseño sigue dos patrones de diseño fundamentales:
 
 
 ## 📂 Estructura del Proyecto
-
+```bash
 proyecto_analisis/
 │
 ├── main.py
@@ -29,7 +29,7 @@ proyecto_analisis/
 │
 └── fabricas/
 └── fabricas.py
-
+```
 
 
 ## 🧩 Componentes del Sistema
