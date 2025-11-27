@@ -1,5 +1,5 @@
 # 🧠 Sistema de Análisis de Riesgo Emocional  
-### Patrón **Singleton** + **Abstract Factory**
+### Patrón **Singleton** + **Abstract Factory** + **Factory Method**
 
 Este proyecto implementa un sistema modular para analizar texto y determinar niveles de riesgo emocional utilizando dos enfoques diferentes:
 
@@ -8,56 +8,59 @@ Este proyecto implementa un sistema modular para analizar texto y determinar niv
 
 El diseño sigue dos patrones de diseño fundamentales:
 
-- **Abstract Factory** → Para crear familias completas de procesadores y analizadores.  
 - **Singleton** → Para administrar un único gestor central de análisis que puede cambiar dinámicamente de estrategia.
 
 
 
 ## 📂 Estructura del Proyecto
 ```bash
-proyecto_analisis/
-│
-├── core/
-│ ├── interfaces.py
-│ └── singleton.py
-│
-├── productos/
-│ ├── procesadores.py
-│ └── analizadores.py
-│
-└── fabricas/
-│ └── fabricas.py
-│
-├── main.py
+├── 📁 Codigo
+│   ├── 📁 core
+│   │   ├── 📁 interfaces
+│   │   │   ├── 🐍 AnalizadorRiesgo.py
+│   │   │   ├── 🐍 ProcesadorTexto.py
+│   │   │   ├── 🐍 Recomendacion.py
+│   │   │   ├── 🐍 RecomendacionFactory.py
+│   │   │   └── 🐍 SaludMentalFactory.py
+│   │   └── 🐍 singleton.py
+│   ├── 📁 fabricas
+│   │   ├── 🐍 FabricaLinguistica.py
+│   │   ├── 🐍 FabricaMachineLearning.py
+│   │   ├── 🐍 RecomendacionRiesgoAltoFactory.py
+│   │   ├── 🐍 RecomendacionRiesgoBajoFactory.py
+│   │   └── 🐍 RecomendacionRiesgoModeradoFactory.py
+│   ├── 📁 productos
+│   │   ├── 📁 analizadores
+│   │   │   ├── 🐍 AnalizadorPuntajePonderado.py
+│   │   │   └── 🐍 ClasificadorNaiveBayes.py
+│   │   ├── 📁 procesadores
+│   │   │   ├── 🐍 ProcesadorPalabrasClave.py
+│   │   │   └── 🐍 ProcesadorVectorial.py
+│   │   └── 📁 recomendaciones
+│   │       ├── 🐍 RecomendacionRiesgoAlto.py
+│   │       ├── 🐍 RecomendacionRiesgoBajo.py
+│   │       └── 🐍 RecomendacionRiesgoModerado.py
+│   ├── 📁 resource
+│   │   └── 🐍 GeneradorRecomendaciones.py
+│   └── 🐍 main.py
+├── 📁 Diagramas UML
+│   ├── 📁 Abstract Factory
+│   │   ├── 📄 Abstract Factory.mdj
+│   │   └── 🖼️ Abstract Factory.png
+│   ├── 📁 Factory Method
+│   │   └── 🖼️ Factory Method.mdj
+│   │   └── 🖼️ Factory Method.png
+│   └── 📁 Singleton
+│       ├── 📄 Singleton.mdj
+│       └── 🖼️ Singleton.png
+├── ⚙️ .gitignore
+└── 📝 README.md
 ```
 
 
 ## 🧩 Componentes del Sistema
 
-### **1. Interfaces (core/interfaces.py)**
-Define las abstracciones:
-- ProcesadorTexto
-- AnalizadorRiesgo
-- SaludMentalFactory (Abstract Factory)
-
-### **2. Productos Concretos (productos/)**
-Cada familia tiene su propio procesador y analizador.
-
-**Familia Lingüística**  
-- ProcesadorPalabrasClave  
-- AnalizadorPuntajePonderado  
-
-**Familia Machine Learning**  
-- ProcesadorVectorial  
-- ClasificadorNaiveBayes  
-
-### **3. Fábricas Concretas (fabricas/fabricas.py)**
-- FabricaLinguistica
-- FabricaMachineLearning
-
-Estas generan objetos compatibles entre sí.
-
-### **4. Singleton (core/singleton.py)**  
+### **1. Singleton (core/singleton.py)**  
 `AdministradorAnalisisTexto` gestiona el flujo de análisis y asegura una única instancia en todo el sistema.
 
 
