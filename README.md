@@ -1,4 +1,4 @@
-# 🧠 Sistema de Análisis de Riesgo Emocional  
+# Sistema de Análisis de Riesgo Emocional  
 ### Patrón **Singleton** + **Abstract Factory** + **Factory Method**
 
 Este proyecto implementa un sistema modular para analizar texto y determinar niveles de riesgo emocional utilizando dos enfoques diferentes:
@@ -58,7 +58,7 @@ El diseño sigue dos patrones de diseño fundamentales:
 ```
 
 
-## 🧩 Componentes del Sistema
+## Componentes del Sistema
 
 ### **1. Singleton (core/singleton.py)**  
 `AdministradorAnalisisTexto` gestiona el flujo de análisis y asegura una única instancia en todo el sistema.
@@ -102,7 +102,7 @@ Notas
 
 
 
-## ▶️ Ejecución
+## Ejecución
 
 Ejecuta el archivo principal:
 

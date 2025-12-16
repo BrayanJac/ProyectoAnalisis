@@ -53,3 +53,5 @@ if __name__ == '__main__':
 	host = os.environ.get('HOST', '127.0.0.1')
 	print(f'Iniciando servidor web en http://{host}:{port}')
 	app.run(host=host, port=port, debug=False)
+
+#se cambia el port a 5001 en caso de estar ocupado el 5000
